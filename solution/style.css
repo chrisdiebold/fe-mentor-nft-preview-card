@@ -17,6 +17,7 @@ body {
   position: relative;
   height: 596px;
   width: 350px;
+  padding: 1.5rem;
   background-color: var(--card-bg);
 }
 
@@ -33,32 +34,68 @@ body {
   margin: auto;
 }
 
-.img-container {
-  padding: 1.5rem;
+.image-container {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.image-container img {
+  width: 100%;
+}
+
+.image-container img:hover .overlay {
+  opacity: 1;
+}
+
+.image-overlay {
+  display: none;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: hsla(178, 100%, 50%, 0.5);
+  margin: auto;
+} 
+
+.image-overlay img {
+  position: absolute;
+  width: 50px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+
+}
+
+.image-container:hover .image-overlay {
+  display: block;
 }
 
 .detail-container {
-  padding-left: 2rem;
-  padding-right: 2rem;
+  padding-top: 1.3rem;
 }
-#ethereum:hover {
-    cursor: pointer;
-    z-index: 2;
-}
-.solution h3 {
-  color: var(--white);
+
+.detail-container a {
+  text-decoration: none;
   font-weight: 600;
-  margin-bottom: 1rem;
+  color: var(--white)
 }
-.solution h3:hover {
-    color: var(--cyan);
-    cursor: pointer;
+
+#eth {
+  margin: 1.3rem auto;
+  font-size: 1.3rem;
+}
+
+.detail-container a:hover {
+  color: var(--cyan)
 }
 
 .solution p {
   color: var(--soft-blue);
-  font-size: 0.95rem;
   font-weight: 300;
+  margin-top: 1rem;
 }
 
 #text-details {
@@ -72,7 +109,6 @@ body {
   display: flex;
   justify-content: space-between;
 }
-
 
 .green-text {
   color: var(--cyan);
@@ -91,9 +127,12 @@ body {
   display: block;
   border-top: 1px solid var(--line-color);
 }
+
+.avatar-wrapper {
+  position: relative;
+}
 .avatar-container {
   margin-top: 1rem;
-  position: relative;
 }
 .avatar {
   height: 2.7rem;
@@ -102,8 +141,8 @@ body {
 }
 .created-text {
   position: absolute;
-  bottom: 7%;
-  left: 26%;
+  bottom: 20%;
+  left: 20%;
 }
 
 #creation {
